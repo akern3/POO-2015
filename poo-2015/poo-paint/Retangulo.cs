@@ -14,12 +14,15 @@ namespace poo_paint
             this.y = y;
             this.lar = lar;
             this.alt = alt;
+            contador = contador + 1;
         }
 
         public int x { get; set; }
         public int y { get; set; }
         public int lar { get; set; }
         public int alt { get; set; }
+        private static int contador { get; set; }
+
 
         public string imprimeRelangulo()
         {
@@ -50,6 +53,13 @@ namespace poo_paint
             Console.WriteLine();
             return "pronto";
         }
-
+        public static void ZeraContador()
+        {
+            contador = 0;
+        }
+        public static int LeContador()
+        {
+            return contador;
+        }
     }
 }
