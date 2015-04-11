@@ -11,9 +11,12 @@ namespace poo_paint
         static void Main(string[] args)
         {
 
-            Retangulo desenho = new Retangulo(20,3,5,6);
-
-            desenho.imprimeRelangulo();
+            Retangulo desenho = new Retangulo(50,10,10,6);
+            Circulo circulo = new Circulo(1,2,3);
+            Figura figura = new Figura();
+            circulo.imprime();
+            figura.imprime();
+            desenho.imprime();
             Console.ReadLine();
         }
     }

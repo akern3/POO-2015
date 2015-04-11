@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace poo_paint
 {
-    public class Retangulo
+    public class Retangulo:Figura
     {
         public Retangulo(int x, int y, int lar, int alt)
         {
@@ -17,14 +17,12 @@ namespace poo_paint
             contador = contador + 1;
         }
 
-        public int x { get; set; }
-        public int y { get; set; }
+        
         public int lar { get; set; }
         public int alt { get; set; }
         private static int contador { get; set; }
 
-
-        public string imprimeRelangulo()
+        public override void imprime()
         {
             for (int i = 0; i < x; i++)
             {
@@ -51,7 +49,7 @@ namespace poo_paint
             }
 
             Console.WriteLine();
-            return "pronto";
+            /*return "pronto";*/
         }
         public static void ZeraContador()
         {
@@ -60,6 +58,30 @@ namespace poo_paint
         public static int LeContador()
         {
             return contador;
+        }
+    }
+    public class Figura
+    {
+
+        public int x { get; set; }
+        public int y { get; set; }
+        public virtual void imprime()
+        {
+            Console.WriteLine("Figura");
+        }
+    }
+    public class Circulo:Figura
+    {
+        public Circulo(int x, int y, int raio)
+        {
+            this.x = x;
+            this.y = y;
+            this.raio = raio;
+        }
+        public int raio { get; set; }
+        public override void imprime()
+        {
+            Console.WriteLine("Circulo");
         }
     }
 }
