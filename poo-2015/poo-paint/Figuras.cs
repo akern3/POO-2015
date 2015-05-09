@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace poo_paint
 {
-    public class Retangulo:Figura
+    public class Retangulo : Figuras
     {
         public Retangulo(int x, int y, int lar, int alt)
         {
@@ -60,7 +60,7 @@ namespace poo_paint
             return contador;
         }
     }
-    public class Figura
+    public class Figuras
     {
 
         public int x { get; set; }
@@ -70,7 +70,7 @@ namespace poo_paint
             Console.WriteLine("Figura");
         }
     }
-    public class Circulo:Figura
+    public class Circulo:Figuras
     {
         public Circulo(int x, int y, int raio)
         {

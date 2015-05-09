@@ -10,7 +10,7 @@ namespace TesteRetangulo
         [TestMethod]
         public void TestaRet()
         {
-            Retangulo testarRetangulo = new Retangulo(1,2,3,4);
+            Figuras testarRetangulo = new Figuras(1,2,3,4);
 
             
         }
@@ -18,13 +18,13 @@ namespace TesteRetangulo
         [TestMethod]
         public void TestaContador()
         {
-            Retangulo.ZeraContador();
-            Assert.AreEqual(0, Retangulo.LeContador());
-            Retangulo r1 = new Retangulo(10, 20, 50, 60);
-            Retangulo r2 = new Retangulo(5, 5, 10, 200);
-            Assert.AreEqual(2, Retangulo.LeContador());
-            Retangulo r3 = new Retangulo(5, 5, 3, 67);
-            Assert.AreEqual(3, Retangulo.LeContador());
+            Figuras.ZeraContador();
+            Assert.AreEqual(0, Figuras.LeContador());
+            Figuras r1 = new Figuras(10, 20, 50, 60);
+            Figuras r2 = new Figuras(5, 5, 10, 200);
+            Assert.AreEqual(2, Figuras.LeContador());
+            Figuras r3 = new Figuras(5, 5, 3, 67);
+            Assert.AreEqual(3, Figuras.LeContador());
         }
     }
 }
