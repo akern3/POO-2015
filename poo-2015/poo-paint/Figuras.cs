@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace poo_paint
 {
@@ -59,6 +61,11 @@ namespace poo_paint
         {
             return contador;
         }
+
+        public override void Desenha(Graphics g)
+        {
+            g.DrawRectangle(Pens.Black, this.x, this.y, this.lar, this.alt);
+        }
     }
     public class Figuras
     {
@@ -69,6 +76,11 @@ namespace poo_paint
         {
             Console.WriteLine("Figura");
         }
+
+        public virtual void Desenha(Graphics g)
+        {
+
+        }
     }
     public class Circulo:Figuras
     {
@@ -78,10 +90,44 @@ namespace poo_paint
             this.y = y;
             this.raio = raio;
         }
+
+        public Circulo(int x, int y, int X1, int Y1)
+        {
+            this.x = x;
+            this.y = y;
+            this.X1 = X1;
+            this.Y1 = Y1;
+        }
         public int raio { get; set; }
+        int X1;
+        int Y1;
         public override void imprime()
         {
             Console.WriteLine("Circulo");
+        }
+
+        public override void Desenha(Graphics g)
+        {
+            g.DrawEllipse(Pens.Black, this.x, this.y, this.X1, this.Y1);
+        }
+    }
+
+    public class Linha:Figuras
+    {
+        public Linha(int x,int y,int X1,int Y1)
+        {
+            this.x = x;
+            this.y = y;
+            this.X1 = X1;
+            this.Y1 = Y1;
+        }
+
+        int X1;
+        int Y1;
+
+        public override void Desenha(Graphics g)
+        {
+            g.DrawLine(Pens.Black, x, y, X1, Y1);
         }
     }
 }
